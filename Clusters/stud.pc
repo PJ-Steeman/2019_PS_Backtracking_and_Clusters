@@ -1,0 +1,60 @@
+#include <stdio.h>
+#define GEGEVENS "stud.txt"
+#define LEN 40
+#define DLEN 21
+
+void vulgeg(void);
+
+EXEC SQL include sqlca.h;
+
+int main(int argc,char *argv[])
+{
+	vulgeg();
+}
+
+
+void sqlprint(void)
+{
+	printf("zit een fout in  %d %s \n",
+			sqlca.sqlcode,sqlca.sqlerrm.sqlerrmc);
+	exit(2);
+}
+
+EXEC SQL WHENEVER SQLERROR do sqlprint();
+
+
+void vulgeg(void)
+{
+	FILE *fp;
+
+	fp=fopen(GEGEVENS,"w");
+     EXEC SQL BEGIN DECLARE SECTION;
+		char naam[LEN]="e327/e327"; 
+        char docentnaam[DLEN] ;
+     EXEC SQL END DECLARE SECTION;
+ 
+
+	memset(&sqlca,'\0',sizeof(sqlca));
+	EXEC SQL CONNECT :naam;
+     EXEC SQL DECLARE x CURSOR FOR
+              SELECT dnaam 
+					FROM docent
+				ORDER BY dnaam;
+ 
+	printf("cursor gedef \n");
+    EXEC SQL OPEN x;
+     EXEC SQL WHENEVER NOT FOUND do break ;
+
+     while ( 1 )
+     {
+          EXEC SQL FETCH x INTO :docentnaam;
+
+          printf("%s \n",docentnaam);
+          fprintf(fp,"%s \n",docentnaam);
+     }
+	 printf("aantal  gelezen %d \n",sqlca.sqlerrd[2]);
+     EXEC SQL CLOSE x;
+	 EXEC SQL COMMIT WORK RELEASE;
+	fclose(fp);
+}
+

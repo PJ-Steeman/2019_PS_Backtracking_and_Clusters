@@ -1,0 +1,13 @@
+all: stud 
+
+stud: stud.o
+	cc -o stud stud.o  -L${ORACLE_HOME}/lib/ -lclntsh   \
+           `cat ${ORACLE_HOME}/lib/sysliblist`  -lm -lpthread 
+
+stud.o: stud.c
+	cc  -I. -I${ORACLE_HOME}/precomp/public -I${ORACLE_HOME}/rdbms/public  \
+            -I${ORACLE_HOME}/rdbms/demo -I${ORACLE_HOME}/plsql/public      \
+            -I${ORACLE_HOME}/network/public    -c  stud.c
+
+stud.c: stud.pc
+	proc stud.pc

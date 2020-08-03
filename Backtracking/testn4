@@ -1,0 +1,40 @@
+ 1     Anderlecht:   0  55 118  96
+ 2        AA_Gent:  55   0 160  52
+ 3       Standard: 118 160   0 195
+ 4    Club_Brugge:  96  52 195   0
+Voor de 0 de speeldag     1    2    3    4
+Voor de 1 de speeldag     4    1    2    3
+totale afstand is 1012
+Voor de 0 de speeldag     1    2    4    3
+Voor de 1 de speeldag     3    1    2    4
+totale afstand is 840
+Voor de 0 de speeldag     1    3    2    4
+Voor de 1 de speeldag     4    1    3    2
+totale afstand is 852
+Voor de 0 de speeldag     2    1    3    4
+Voor de 1 de speeldag     4    2    1    3
+totale afstand is 840
+Voor de 0 de speeldag     2    1    4    3
+Voor de 1 de speeldag     3    2    1    4
+totale afstand is 1012
+Voor de 0 de speeldag     2    3    1    4
+Voor de 1 de speeldag     3    1    4    2
+totale afstand is 852
+Voor de 0 de speeldag     3    1    2    4
+Voor de 1 de speeldag     1    2    4    3
+totale afstand is 840
+Voor de 0 de speeldag     3    1    4    2
+Voor de 1 de speeldag     2    3    1    4
+totale afstand is 852
+Voor de 0 de speeldag     3    2    1    4
+Voor de 1 de speeldag     2    1    4    3
+totale afstand is 1012
+Voor de 0 de speeldag     4    1    2    3
+Voor de 1 de speeldag     1    2    3    4
+totale afstand is 1012
+Voor de 0 de speeldag     4    1    3    2
+Voor de 1 de speeldag     1    3    2    4
+totale afstand is 852
+Voor de 0 de speeldag     4    2    1    3
+Voor de 1 de speeldag     2    1    3    4
+totale afstand is 840
